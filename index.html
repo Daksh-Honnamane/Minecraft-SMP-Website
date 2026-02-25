@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hintzSMP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Minecraft-style pixel font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #9bb682;
+            margin: 0;
+            padding: 0;
+            color: #2d2d2d;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        .container {
+            width: 65%;
+            max-width: 850px;
+            margin: 50px auto;
+            padding: 2rem;
+            background-color: #f9e6c5;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 1.6rem;
+            color: #4b7f3b;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 0px #cde7b0;
+        }
+
+        h2 {
+            font-size: 0.9rem;
+            border-bottom: 3px solid #4b7f3b;
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+            transition: color 0.3s ease;
+        }
+
+        h2:hover {
+            color: #2f5f22;
+        }
+
+        p, li {
+            font-size: 0.65rem;
+            line-height: 1.8;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin: 0.8rem 0;
+            transition: transform 0.2s ease;
+        }
+
+        li:hover {
+            transform: translateX(5px);
+        }
+
+        .ip-box {
+            background-color: #4b7f3b;
+            color: white;
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 0.7rem;
+            margin-top: 1rem;
+            box-shadow: 0 4px 0 #2f5f22;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .ip-box:hover {
+            background-color: #3d6e2f;
+            box-shadow: 0 2px 0 #2f5f22;
+            transform: translateY(2px);
+        }
+
+        /* Toast for IP copied */
+        #toast {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4b7f3b;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Press Start 2P', cursive;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease, bottom 0.4s ease;
+            z-index: 1000;
+        }
+
+        hr {
+            border: none;
+            height: 2px;
+            background-color: #4b7f3b;
+            margin: 2rem 0;
+        }
+
+        .important {
+            text-align: center;
+            font-size: 0.75rem;
+            margin: 2rem 0;
+            color: #8b0000;
+            animation: pulse 2s infinite;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.6rem;
+            margin-top: 2rem;
+            color: #555;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+        }
+
+        /* Player cards */
+        .player-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .player-card {
+            background: #1e1e1e;
+            border-radius: 12px;
+            padding: 12px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        .player-card img {
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="toast">IP copied to clipboard!</div>
+
+<div class="container">
+    <h1>hintzSMP</h1>
+
+    <p>Welcome to the official hintzSMP!</p>
+    <p>This Minecraft server is run by students at Mountain Ridge High School for fun, you can invite anyone of your friends tho.</p>
+    <p>To join, just type your username into the whitelist channel in the discord.</p>
+ 
+    <hr>
+
+    <h2>Server Info</h2>
+
+    <a href="https://discord.gg/sgK6p7cP" target="_blank" style="text-decoration: none;">
+        <div class="ip-box" style="background-color:#5865F2; box-shadow: 0 4px 0 #3c45a5;">
+            Join Our Discord
+        </div>
+    </a>
+
+    <div class="ip-box" id="ip-box">hintzsmp.playserver.pro</div>
+
+    <p>World Border: ~4500 block radius (expands as more players join)</p>
+    <p>The End is currently closed — a collective non-pvp End fight coming soon.</p>
+
+    <hr>
+
+    <h2>General Rules</h2>
+    <ul>
+        <li><strong>Combat allowed</strong> – Just don’t farm kills or repeatedly target people.</li>
+        <li><strong>No X-raying / Seed-raying</strong> – Isaac’s budget cuts are patched now.</li>
+        <li><strong>No duping or game-breaking glitches</strong></li>
+        <li><strong>No hacked clients</strong> - Anti-Cheat pings me and three strikes will autoban you.</li>
+        <li><strong>No combat logging</strong> – Punishment: sing a song saying sorry (must include an instrument).</li>
+        <li><strong>No griefing builds</strong> - Even if its someone base, dont destroy their work and decorations.</li>
+        <li><strong>No defacing the world</strong> - Cut your entire tree down, patch up creeper holes, etc.</li>
+        <li><strong>No fighting near spawn</strong> - Let new players have a chance to enjoy the game. </li>
+    </ul>
+
+    <div class="important">
+        — THE MOST IMPORTANT RULE: NO MORE SLAVERY — 
+    </div>
+
+    <hr>
+
+    <h2>Server Notes</h2>
+    <ul>
+        <li>All blocks are logged. All mining and griefing are traceable.</li>
+        <li>Isaac’s budget cuts have been budgeted, the new anti-xray is <i>beautiful</i></li>
+    </ul>
+
+    <hr>
+
+    <!-- Player count -->
+    <p>Players Online: <span id="player-count">Loading...</span></p>
+
+    <!-- Player cards -->
+    <div id="player-list" class="player-grid"></div>
+
+</div>
+
+<script>
+    // IP Copy Toast
+    const ipBox = document.getElementById("ip-box");
+    const toast = document.getElementById("toast");
+
+    ipBox.addEventListener("click", () => {
+        navigator.clipboard.writeText("hintzsmp.playserver.pro");
+
+        toast.style.opacity = "1";
+        toast.style.bottom = "60px";
+
+        setTimeout(() => {
+            toast.style.opacity = "0";
+            toast.style.bottom = "40px";
+        }, 1500);
+    });
+
+    // Seamless Player List
+    const playerList = document.getElementById("player-list");
+    const playerCount = document.getElementById("player-count");
+    let currentPlayers = [];
+
+    function updateServerStatus() {
+        fetch("https://api.mcsrvstat.us/2/hintzsmp.playserver.pro")
+        .then(response => response.json())
+        .then(data => {
+            if (!data.online) {
+                playerCount.textContent = "Server Offline";
+                playerList.innerHTML = "";
+                currentPlayers = [];
+                return;
+            }
+
+            playerCount.textContent = `${data.players.online ?? 0} / ${data.players.max ?? 0}`;
+
+            const onlinePlayers = data.players?.list || [];
+
+            if (JSON.stringify(onlinePlayers) === JSON.stringify(currentPlayers)) return;
+
+            currentPlayers = onlinePlayers;
+
+            // Remove players who left
+            Array.from(playerList.children).forEach(card => {
+                if (!onlinePlayers.includes(card.dataset.username)) {
+                    playerList.removeChild(card);
+                }
+            });
+
+            // Add new players
+            onlinePlayers.forEach((player, index) => {
+                if (!playerList.querySelector(`[data-username="${player}"]`)) {
+                    const card = document.createElement("div");
+                    card.className = "player-card";
+                    card.dataset.username = player;
+                    card.style.animationDelay = `${index * 0.1}s`;
+                    card.innerHTML = `
+                        <img src="https://mc-heads.net/avatar/${player}/64" alt="${player}">
+                        <div>${player}</div>
+                    `;
+                    playerList.appendChild(card);
+                }
+            });
+        })
+        .catch(error => console.error("Server fetch error:", error));
+    }
+
+    updateServerStatus();
+    setInterval(updateServerStatus, 10000);
+</script>
+
+<div class="footer">
+    samantha1231 • 2026
+</div>
+
+</body>
+</html>
