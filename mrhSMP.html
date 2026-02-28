@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mrhSMP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Minecraft-style pixel font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="data:image/png;base64,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">
+
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #9bb682;
+            margin: 0;
+            padding: 0;
+            color: #2d2d2d;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        .container {
+            width: 65%;
+            max-width: 850px;
+            margin: 50px auto;
+            padding: 2rem;
+            background-color: #f9e6c5;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 1.6rem;
+            color: #4b7f3b;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 0px #cde7b0;
+        }
+
+        h2 {
+            font-size: 0.9rem;
+            border-bottom: 3px solid #4b7f3b;
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+            transition: color 0.3s ease;
+        }
+
+        h2:hover {
+            color: #2f5f22;
+        }
+
+        p, li {
+            font-size: 0.65rem;
+            line-height: 1.8;
+        }
+
+        #samhead {
+            width: 18px;
+            height: 18px;
+            vertical-align: middle;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin: 0.8rem 0;
+            transition: transform 0.2s ease;
+        }
+
+        li:hover {
+            transform: translateX(5px);
+        }
+
+        .ip-box {
+            background-color: #4b7f3b;
+            color: white;
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 0.7rem;
+            margin-top: 1rem;
+            box-shadow: 0 4px 0 #2f5f22;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .ip-box:hover {
+            background-color: #3d6e2f;
+            box-shadow: 0 2px 0 #2f5f22;
+            transform: translateY(2px);
+        }
+
+        /* Toast for IP copied */
+        #toast {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4b7f3b;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Press Start 2P', cursive;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease, bottom 0.4s ease;
+            z-index: 1000;
+        }
+
+        hr {
+            border: none;
+            height: 2px;
+            background-color: #4b7f3b;
+            margin: 2rem 0;
+        }
+
+        .important {
+            text-align: center;
+            font-size: 0.75rem;
+            margin: 2rem 0;
+            color: #8b0000;
+            animation: pulse 2s infinite;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.6rem;
+            margin-top: 2rem;
+            color: #555;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+        }
+
+        /* Player cards */
+        .player-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .player-card {
+            background: #1e1e1e;
+            border-radius: 12px;
+            padding: 12px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        .player-card img {
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="toast">IP copied to clipboard!</div>
+
+<div class="container">
+    <h1>mrhSMP</h1>
+
+    <p>Welcome to the unofficial mrhSMP!</p>
+    <p>This Minecraft server is run by, <img id="samhead" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAGnklEQVR4Aeyc32tcRRTHvzN3fyZNUp+0tKIplPwT+th3RXwXBB8FfdI/S/IgaOKDguKfIAa0gqBYxZAmS7O793rO1iWlsOnmzL07d+58l367282emXO+5zMnD5PU/3N8VMXSX4dfVCeffVL99PFHJp18/mn19zdfVv/++F0U6d6agzl/qV09iOW/7uvBR9YOEICs2w8QAAKQuQOZl88JQAAydyDz8jkBMgVgWTYBWDqR6TMByLTxy7IJwNKJTJ8JQKaNX5ZNAJZOZPpMADJt/LJsArB0ItPnYACcdwhRkO8OcM4haH8HwKpFIIIeIblr7E03f/HzQQBoAsWtIYrdkU0SCwHoxaTW/beTxvW2++jdGtgksUW/QNGzyfc8ghiQ2kP90x4g4CEVBERrqBShSVilS9glBITurxTJMotG3vBZQ+25P4u0+qZxIYfn2e5AOADLlficpAMEIMm21Zc0AajPyyRXIgBJtq2+pAlAfV4muRIBSLJtN096VQQBWOVMJu8TgEwavapMArDKmUzeJwCZNHpVmQRglTOZvE8AMmn0qjIJwCpnMnk/LgBynVZsbaHYvmWSl1jnIpYQmL/WDlmjSdZetnZE9+QqcjzG3ltv45WHD03SWC9rvKzIpr6ue2sOqeavvkQFwMnp1VNsnQCxT1Bo/lq7rqGNiKWoAMQqmvteOUAArrzI8hUByLLtV0UTgCsvsnxFALJs+1XRBODKi069WrcYArCuUx39HAHoaGPXLYsArOtURz9HADra2HXLIgDrOtXRzxGAjjZ23bIIwLpOdfRz3gX8di001okzeqdtksTm/ifAP7V80QPtw/+6aT99b3cEq/o7Q/hRH8WoMMkPCzinDuRJgXMO6oHZP/G+Jz0w//8M0vvACeDhPCBdtAuZP5wcAKMW3nsPZzz9Gucztz/78glA5ggQAAKQuQOZl88JQAAyd6Aj5VvL4ASwOteROALQkUZayyAAVuc6EkcAOtJIaxkEwOpcR+IIQEcaaS2DAFid60hcdABcBfgAubKCmxtVyt6LmzQvN2oWOcldJetUNgXlPwccwh7qPSR3s0K218235g7bRm1NgdHpDMPTqU1nc4yHY4y3t2waj7Fd+Wj5D87EADkAQT0ICa4j1ssiCoJVQSdIzFvcicudureqgkwBu0Lyh0w+sS/oj/oftACD03aAAKTdv+DsCUCwhWkvQADS7l9w9gQg2MK0FyAAifavrrQJQF1OJroOAUi0cXWlTQDqcjLRdQhAoo2rK20CUJeTia5DABJtXF1pE4C6nEx0nSAAnBTt5jDfx2NW4uLJE5yfnZl0cX6OaVVi6iqTZhInl3mwPqpS8pccQvLXNW6yf92fDQIAcp2qd9LW+/j5n6f44asjHB8emvTt8df4dX6K30dTk/4YzjAXCKymTi4m+P7Inr/GTiYT6/a1xIUBoCnInbT1J3IWEyDwBF2ihJ5kq4ImgEwfnUL5TgAFgEragfAJkHT5TJ4AZM4AASAAmTuQefmcAIkA0FSaBKApZxNZlwAk0qim0iQATTmbyLoEIJFGNZUmAWjK2UTWJQCJNKqpNAlAU84msq43/1748hptMACGNjmJHRQeA+9skth+r49egFxRAN6b5CTOnLvWLPmrB9f5d+3XxL+qqlCWpVl+PpvDqtKJeff3gYMDk3oP7mP/9hYOdoYmPdgd4/U7d3H37hsmvXbnHoq9PWBv16Te7g72d0am3LVmrV09sPpX7b+Ji6cznJ9NzKphAvRxLaXXTAelfxB0ivzi9OsUsEgnR9AEkBMcNAGkdvXA6h8GfZQyiYMmAPjI2gH55pd1/dkXTwAyR4AAEIDMHci8fE6AlgKwqbQIwKacbuk+BKCljdlUWgRgU063dB8C0NLGbCotArApp1u6DwFoaWM2lRYB2JTTLd0nDAC9iZpOUV5emlTJVbReqfZv34ZFPbnGdc4BVRlFzjloDpbcNUZrVw+e9+9mr6eQFETOrCAAytkUk18e4fznE5MuHz/Gq+++g3sffmDSnfffQzEogKeTKNK9NQdr/lq7emD1b/LoNwzlSnk8HsGqIACgP40ytZ1+Jb2az6GnQE+DRRrrnIty+iFTxzkXnL96oF5YVIn3kgK8/GVWS781Ma0NORA2ATaUJLdpzgEC0Jy3SaxMAJJoU3NJEoDmvE1iZQLQkjbFSoMAxHK+JfsSgJY0IlYaBCCW8y3ZlwC0pBGx0iAAsZxvyb4EoCWNiJUGAYjlfEv2JQCJGxF7+/8AAAD//wTzKuQAAAAGSURBVAMAIJKzCCn03YcAAAAASUVORK5CYII="> samantha1231, a student at Mountain Ridge High School for fun, but you can invite anyone of your friends tho.</p>
+    <p>To join, just type your username into the whitelist channel in the discord.</p>
+    <p><i>***this website works best on google chrome***</i></p>
+ 
+    <hr>
+
+    <h2>Server Info</h2>
+
+    <a href="https://discord.gg/sgK6p7cP" target="_blank" style="text-decoration: none;">
+        <div class="ip-box" style="background-color:#5865F2; box-shadow: 0 4px 0 #3c45a5;">
+            Join Our Discord
+        </div>
+    </a>
+
+    <div class="ip-box" id="ip-box">mrhSMP.playserver.pro</div>
+
+    <p>World Border: a 5000 block radius (will expand as more people join)</p>
+    <p>The End is currently closed — a collective non-pvp End fight coming soon!!!</p>
+
+    <hr>
+
+    <h2>General Rules</h2>
+    <ul>
+        <li><strong>Combat allowed</strong> – Just don’t farm kills or repeatedly target people.</li>
+        <li><strong>No X-raying / Seed-raying</strong> – Isaac’s budget cuts are patched now.</li>
+        <li><strong>No duping or game-breaking glitches</strong></li>
+        <li><strong>No hacked clients</strong> - Anti-Cheat pings me and three strikes will autoban you.</li>
+        <li><strong>No combat logging</strong> – Punishment: sing a song saying sorry (must include an instrument).</li>
+        <li><strong>No griefing builds</strong> - Even if its someone base, dont destroy their work and decorations.</li>
+        <li><strong>No defacing the world</strong> - Cut your entire tree down, patch up creeper holes, etc.</li>
+        <li><strong>No fighting near spawn</strong> - Let new players have a chance to enjoy the game. </li>
+    </ul>
+
+    <div class="important">
+        — THE MOST IMPORTANT RULE: NO MORE SLAVERY — 
+    </div>
+
+    <hr>
+
+    <h2>Server Notes</h2>
+    <ul>
+        <li>All blocks are logged. All mining and griefing are traceable.</li>
+        <li>Isaac’s budget cuts have been budgeted, the new anti-xray is <i>beautiful</i></li>
+    </ul>
+
+    <hr>
+
+    <!-- Player count -->
+    <p>Players Online: <span id="player-count">Loading...</span></p>
+
+    <!-- Player cards -->
+    <div id="player-list" class="player-grid"></div>
+
+</div>
+
+<script>
+    // IP Copy Toast
+    const ipBox = document.getElementById("ip-box");
+    const toast = document.getElementById("toast");
+
+    ipBox.addEventListener("click", () => {
+        navigator.clipboard.writeText("mrhSMP.playserver.pro");
+
+        toast.style.opacity = "1";
+        toast.style.bottom = "60px";
+
+        setTimeout(() => {
+            toast.style.opacity = "0";
+            toast.style.bottom = "40px";
+        }, 1500);
+    });
+
+    // Seamless Player List
+    const playerList = document.getElementById("player-list");
+    const playerCount = document.getElementById("player-count");
+    let currentPlayers = [];
+
+    function updateServerStatus() {
+        fetch("https://api.mcsrvstat.us/2/mrhSMP.playserver.pro")
+        .then(response => response.json())
+        .then(data => {
+            if (!data.online) {
+                playerCount.textContent = "Server Offline";
+                playerList.innerHTML = "";
+                currentPlayers = [];
+                return;
+            }
+
+            playerCount.textContent = `${data.players.online ?? 0} / ${data.players.max ?? 0}`;
+
+            const onlinePlayers = data.players?.list || [];
+
+            if (JSON.stringify(onlinePlayers) === JSON.stringify(currentPlayers)) return;
+
+            currentPlayers = onlinePlayers;
+
+            // Remove players who left
+            Array.from(playerList.children).forEach(card => {
+                if (!onlinePlayers.includes(card.dataset.username)) {
+                    playerList.removeChild(card);
+                }
+            });
+
+            // Add new players
+            onlinePlayers.forEach((player, index) => {
+                if (!playerList.querySelector(`[data-username="${player}"]`)) {
+                    const card = document.createElement("div");
+                    card.className = "player-card";
+                    card.dataset.username = player;
+                    card.style.animationDelay = `${index * 0.1}s`;
+                    card.innerHTML = `
+                        <img src="https://mc-heads.net/avatar/${player}/64" alt="${player}">
+                        <div>${player}</div>
+                    `;
+                    playerList.appendChild(card);
+                }
+            });
+        })
+        .catch(error => console.error("Server fetch error:", error));
+    }
+
+    updateServerStatus();
+    setInterval(updateServerStatus, 10000);
+</script>
+
+<div class="footer">
+    samantha1231 • 2026
+</div>
+
+</body>
+</html>
